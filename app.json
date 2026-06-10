@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "AbouDev Network",
+    "slug": "aboudev-network",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "platforms": [
+      "android"
+    ],
+    "android": {
+      "package": "com.aboudev.network",
+      "permissions": [
+        "ACCESS_WIFI_STATE",
+        "CHANGE_WIFI_STATE",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "INTERNET"
+      ]
+    },
+    "plugins": [],
+    "extra": {
+      "eas": {
+        "projectId": "aboudev-network"
+      }
+    }
+  }
+}

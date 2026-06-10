@@ -1,0 +1,19 @@
+{
+  "name": "aboudevnetworkrn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@expo/metro-config": "^56.0.13",
+    "expo": "^54.0.35",
+    "react": "^19.2.7",
+    "react-native": "^0.86.0"
+  }
+}
