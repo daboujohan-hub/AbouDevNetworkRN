@@ -3,13 +3,20 @@ import {
   View, Text, FlatList, TouchableOpacity,
   StatusBar, StyleSheet, ActivityIndicator
 } from 'react-native';
+import LoginScreen from './screens/LoginScreen';
 
 export default function App() {
+  const [token, setToken] = useState(null);
+  const [user, setUser] = useState(null);
   const [devices, setDevices] = useState([
     { id: '1', ip: '192.168.1.1', name: 'Routeur', mac: 'AA:BB:CC:DD:EE:01', type: '📡', online: true },
     { id: '2', ip: '192.168.1.100', name: 'Mon téléphone', mac: 'AA:BB:CC:DD:EE:02', type: '📱', online: true },
   ]);
   const [scanning, setScanning] = useState(false);
+
+  if (!token) {
+    return <LoginScreen onLogin={(t, u) => { setToken(t); setUser(u); }} />;
+  }
 
   const startScan = () => {
     setScanning(true);
@@ -21,8 +28,13 @@ export default function App() {
       <StatusBar barStyle="light-content" backgroundColor="#0A0A0F" />
 
       <View style={styles.header}>
-        <Text style={styles.title}>AbouDev Network</Text>
-        <Text style={styles.status}>● EN LIGNE</Text>
+        <View>
+          <Text style={styles.title}>AbouDev Network</Text>
+          <Text style={styles.username}>👤 {user?.username}</Text>
+        </View>
+        <TouchableOpacity onPress={() => { setToken(null); setUser(null); }}>
+          <Text style={styles.logout}>Déconnexion</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.statsRow}>
@@ -67,8 +79,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#0A0A0F' },
   header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', padding: 16, paddingTop: 48 },
-  title: { color: '#00FF88', fontSize: 20, fontWeight: 'bold' },
-  status: { color: '#00FF88', fontSize: 12 },
+  title: { color: '#00FF88', fontSize: 18, fontWeight: 'bold' },
+  username: { color: '#7B8090', fontSize: 12 },
+  logout: { color: '#FF3C3C', fontSize: 13 },
   statsRow: { flexDirection: 'row', paddingHorizontal: 16, marginBottom: 16, gap: 12 },
   statCard: { flex: 1, backgroundColor: '#1A1A2E', borderRadius: 12, padding: 16 },
   statNumber: { color: '#00FF88', fontSize: 32, fontWeight: 'bold' },

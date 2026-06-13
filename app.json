@@ -1,14 +1,12 @@
 {
   "expo": {
-    "name": "AbouDev Network",
+    "name": "Réseau CI",
     "slug": "aboudev-network",
     "version": "1.0.0",
     "orientation": "portrait",
-    "platforms": [
-      "android"
-    ],
+    "platforms": ["android"],
     "android": {
-      "package": "com.aboudev.network",
+      "package": "com.aboudev.reseauci",
       "permissions": [
         "ACCESS_WIFI_STATE",
         "CHANGE_WIFI_STATE",
@@ -18,10 +16,9 @@
         "INTERNET"
       ]
     },
-    "plugins": [],
     "extra": {
       "eas": {
-        "projectId": "aboudev-network"
+        "projectId": "fc286c53-6784-426c-b745-7255c8a73946"
       }
     }
   }

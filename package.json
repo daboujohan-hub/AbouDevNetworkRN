@@ -1,19 +1,21 @@
 {
-  "name": "aboudevnetworkrn",
+  "name": "aboudev-network",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "expo start",
+    "android": "expo run:android"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@expo/metro-config": "^56.0.13",
-    "expo": "^54.0.35",
-    "react": "^19.2.7",
-    "react-native": "^0.86.0"
+    "expo": "~54.0.0",
+    "expo-location": "^56.0.17",
+    "expo-network": "^8.0.8",
+    "expo-splash-screen": "^31.0.13",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "react-native-network-info": "^5.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0"
   }
 }
